@@ -6,7 +6,7 @@ package:
   version: "{{ PACKAGE_VERSION }}"
 
 source:
-  path: ../src
+  path: ../pkg
 
 requirements:
   # Tools required to build the package. These packages are run on the build system and include
@@ -14,14 +14,19 @@ requirements:
   # compilers (real cross, pseudo-cross, or native when not cross-compiling), and any source pre-processors.
   # https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html#build
   build:
-    - python 3.8.*
-    - setuptools
+    - r-base 3.6
+    - gcc_linux-64=7.3.0=h553295d_14
+    - gfortran_linux-64 >=7.3.0
 
   # Packages required to run the package. These are the dependencies that are installed automatically
   # whenever the package is installed.
   # https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html#run
   run:
-    - python 3.8.*
+    - r-base 3.6
+
+test:
+  requires:
+    - r-base
 
 build:
-  script: python setup.py install --single-version-externally-managed --record=record.txt
+  script: $R CMD INSTALL --build .

@@ -16,7 +16,11 @@ buildscript {
         classpath "com.palantir.transforms.python:lang-python-gradle-plugin:${transformsPythonVersion}"
     }
 }
-
+conda {
+    build {
+        buildString = "r36_0"
+    }
+}
 apply plugin: 'com.palantir.transforms.lang.python-library'
 apply plugin: 'com.palantir.transforms.lang.python-library-defaults'
 

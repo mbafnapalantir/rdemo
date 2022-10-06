@@ -1,0 +1,14 @@
+Package: rdemo
+Version: 0.0.1
+License: file LICENSE
+Title: R works in Foundry
+Description: Package proving R works in Foundry.
+Author: Palantir Technologies, Inc.
+Maintainer: Mihir Bafna <mbafna@palantir.com>
+Depends:
+    R (>= 3.2)
+URL: https://papaya.yojoe.local/workspace/data-integration/code/repos/ri.stemma.main.repository.1cf337a1-4e71-4d01-9bc2-a260b117adcf
+BugReports: https://papaya.yojoe.local/workspace/data-integration/code/repos/ri.stemma.main.repository.1cf337a1-4e71-4d01-9bc2-a260b117adcf
+Collate:
+    Utils.R
+  
